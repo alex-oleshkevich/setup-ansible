@@ -1,0 +1,19 @@
+name: "Test Action"
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: "It should install ansible"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch num squared
+        id: get_square
+        uses: ./ 
+        with:
+          version: "9.3.0"
+
+      - name: "Print Ansible version"
+        run: ansible-playbook --version
