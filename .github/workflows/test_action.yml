@@ -9,8 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Fetch num squared
-        id: get_square
+      - name: "Install Ansible"
         uses: ./ 
         with:
           version: "9.3.0"
